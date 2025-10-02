@@ -1,103 +1,148 @@
-import Image from "next/image";
+import { DashboardLayout, DashboardGrid, DashboardCard } from "@/components/layout/dashboard-layout"
+import { Button } from "@/components/ui/button"
+import { Battery, Zap, Grid3X3, TrendingUp } from "lucide-react"
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <DashboardLayout>
+      {/* Welcome Section */}
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
+        <p className="text-muted-foreground">
+          Monitor your solar power system in real-time
+        </p>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      {/* KPI Cards Grid */}
+      <DashboardGrid className="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-8">
+        <DashboardCard title="Solar Power" className="border-green-200 dark:border-green-800">
+          <div className="flex items-center space-x-2">
+            <Zap className="h-8 w-8 text-yellow-500" />
+            <div>
+              <div className="text-2xl font-bold">2.4 kW</div>
+              <p className="text-sm text-muted-foreground">Current Generation</p>
+            </div>
+          </div>
+        </DashboardCard>
+
+        <DashboardCard title="Battery Status" className="border-blue-200 dark:border-blue-800">
+          <div className="flex items-center space-x-2">
+            <Battery className="h-8 w-8 text-blue-500" />
+            <div>
+              <div className="text-2xl font-bold">85%</div>
+              <p className="text-sm text-muted-foreground">State of Charge</p>
+            </div>
+          </div>
+        </DashboardCard>
+
+        <DashboardCard title="Grid Voltage" className="border-purple-200 dark:border-purple-800">
+          <div className="flex items-center space-x-2">
+            <Grid3X3 className="h-8 w-8 text-purple-500" />
+            <div>
+              <div className="text-2xl font-bold">230V</div>
+              <p className="text-sm text-muted-foreground">AC Voltage</p>
+            </div>
+          </div>
+        </DashboardCard>
+
+        <DashboardCard title="Daily Energy" className="border-green-200 dark:border-green-800">
+          <div className="flex items-center space-x-2">
+            <TrendingUp className="h-8 w-8 text-green-500" />
+            <div>
+              <div className="text-2xl font-bold">18.5 kWh</div>
+              <p className="text-sm text-muted-foreground">Generated Today</p>
+            </div>
+          </div>
+        </DashboardCard>
+      </DashboardGrid>
+
+      {/* Main Content Grid */}
+      <DashboardGrid className="grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Battery Gauge - Takes up 1 column */}
+        <DashboardCard
+          title="Battery Gauge"
+          description="Real-time battery charge level"
+          className="col-span-1"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <div className="flex items-center justify-center h-64">
+            <div className="relative">
+              <div className="w-32 h-32 rounded-full border-8 border-gray-200 dark:border-gray-700 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="text-2xl font-bold">85%</div>
+                  <div className="text-sm text-muted-foreground">SOC</div>
+                </div>
+              </div>
+              <div className="absolute inset-0 w-32 h-32 rounded-full border-8 border-transparent border-t-blue-500 animate-pulse"></div>
+            </div>
+          </div>
+        </DashboardCard>
+
+        {/* Time Series Chart - Takes up 2 columns */}
+        <DashboardCard
+          title="Power Generation"
+          description="Real-time power generation over time"
+          className="col-span-1 lg:col-span-2"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <div className="h-64 flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg">
+            <div className="text-center">
+              <TrendingUp className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
+              <p className="text-muted-foreground">Chart will be implemented with Nivo</p>
+              <Button variant="outline" className="mt-4">
+                View Analytics
+              </Button>
+            </div>
+          </div>
+        </DashboardCard>
+      </DashboardGrid>
+
+      {/* System Status and Controls */}
+      <DashboardGrid className="grid-cols-1 md:grid-cols-2 mt-6">
+        <DashboardCard
+          title="System Status"
+          description="Current system health and alerts"
         >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <span className="text-sm">Solar Panels</span>
+              <span className="text-sm font-medium text-green-600">Online</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-sm">Inverter</span>
+              <span className="text-sm font-medium text-green-600">Active</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-sm">Grid Connection</span>
+              <span className="text-sm font-medium text-green-600">Connected</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-sm">Data Logger</span>
+              <span className="text-sm font-medium text-blue-600">Recording</span>
+            </div>
+          </div>
+        </DashboardCard>
+
+        <DashboardCard
+          title="Quick Actions"
+          description="System controls and data export"
+        >
+          <div className="space-y-4">
+            <Button className="w-full" variant="outline">
+              Export Data
+            </Button>
+            <Button className="w-full" variant="outline">
+              Generate Report
+            </Button>
+            <Button className="w-full" variant="outline">
+              System Settings
+            </Button>
+            <a href="/test-parser">
+              <Button className="w-full" variant="secondary">
+                Test CSV Parser
+              </Button>
+            </a>
+          </div>
+        </DashboardCard>
+      </DashboardGrid>
+    </DashboardLayout>
   );
 }
