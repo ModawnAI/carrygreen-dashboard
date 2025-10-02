@@ -1,0 +1,113 @@
+# Carrygreen Real-Time Monitoring Dashboard PRD
+
+## Project Overview
+Create a real-time monitoring dashboard for TwinklePower inverter data using Next.js, ShadCN UI, and modern charting libraries. The dashboard will visualize solar power generation, battery status, and grid monitoring data from time-series CSV data.
+
+## Technical Requirements
+
+### Core Technologies
+- **Frontend Framework**: Next.js 15.5+ with App Router
+- **UI Library**: ShadCN UI components with Tailwind V4 CSS 
+- **Charts**: Nivo (built on D3.js) for data visualization
+- **Animations**: Framer Motion for smooth transitions
+- **Data Processing**: CSV parsing and real-time data simulation
+- **State Management**: React hooks for local state
+
+### Data Structure
+The dashboard will process CSV data containing:
+- **PV (Solar) Data**: Voltage, Current, Power (W), Daily/Monthly/Yearly generation (Wh)
+- **Battery Data**: Voltage, Current, Temperature, State of Charge (SOC)
+- **Inverter Data**: Voltage, Current, Frequency (Hz)
+- **Grid Data**: Voltage, Current, Frequency (Hz)
+- **Timestamps**: One-minute interval data points
+
+### Dashboard Components
+
+#### 1. Main Layout
+- Responsive grid layout using ShadCN UI Card components
+- Mobile-first design with breakpoints for tablet and desktop
+- Header with system status and last update time
+- Sidebar navigation for different views (optional)
+
+#### 2. Key Performance Indicators (KPIs)
+- **Current Solar Power** (PV_Power_W): Real-time power generation
+- **Battery State of Charge** (Battery_SOC): Percentage with color coding
+- **Grid Voltage** (Grid_Voltage): Current grid voltage level
+- **Daily Energy Generation** (PV_Daily_Wh): Today's total solar production
+- **System Status**: Overall health indicator
+
+#### 3. Battery Gauge Component
+- Circular gauge showing Battery SOC percentage
+- Color-coded: Green (80-100%), Yellow (40-79%), Red (0-39%)
+- Animated needle/progress with Framer Motion
+- Real-time updates with smooth transitions
+
+#### 4. Time Series Chart
+- Multi-line chart showing key metrics over time
+- Toggleable metrics: Battery Voltage, Grid Voltage, PV Power
+- Time range selector (1 hour, 6 hours, 24 hours, 7 days)
+- Interactive tooltips with exact values
+- Responsive design with proper scaling
+
+#### 5. Energy Production Summary
+- Bar chart comparing Daily, Monthly, and Yearly generation
+- Progress indicators for current vs. target goals
+- Historical comparison with previous periods
+
+#### 6. System Status Panel
+- Real-time alerts for system issues
+- Connection status indicators
+- Data freshness indicators
+- Export functionality for data
+
+### Real-Time Features
+- **Data Simulation**: Generate realistic data updates every 5-10 seconds
+- **WebSocket Simulation**: Mock real-time data streaming
+- **Auto-refresh**: Configurable refresh intervals
+- **Live Updates**: Smooth animations for value changes
+- **Historical Data**: Load and display historical CSV data
+
+### UI/UX Requirements
+- **Color Scheme**: Professional dashboard colors with proper contrast
+- **Responsive Design**: Works on mobile, tablet, and desktop
+- **Accessibility**: WCAG 2.1 AA compliance
+- **Performance**: Smooth 60fps animations
+- **Loading States**: Skeleton loaders and loading indicators
+- **Error Handling**: Graceful error states and retry mechanisms
+
+### Data Management
+- **CSV Parser**: Parse and validate the provided Carrygreen.csv file
+- **Data Normalization**: Convert timestamps and handle missing values
+- **Caching**: Implement data caching for performance
+- **Export**: Allow users to export filtered data
+- **Search/Filter**: Filter data by date ranges and metrics
+
+### Performance Requirements
+- **Initial Load**: Dashboard loads in under 3 seconds
+- **Data Updates**: Real-time updates with minimal lag
+- **Chart Rendering**: Smooth chart animations and interactions
+- **Memory Management**: Efficient data handling for large datasets
+- **Bundle Size**: Optimized bundle with code splitting
+
+### Deployment
+- **Environment**: Production-ready Next.js application
+- **Build Process**: Optimized production build
+- **Static Assets**: Proper asset optimization
+- **Environment Variables**: Configuration for different environments
+
+## Success Criteria
+1. Dashboard displays real-time inverter data accurately
+2. All charts and gauges update smoothly with new data
+3. Responsive design works across all device sizes
+4. Performance meets specified requirements
+5. Code is maintainable and well-documented
+6. User experience is intuitive and professional
+
+## Technical Implementation Notes
+- Use Next.js App Router for modern React patterns
+- Implement proper TypeScript interfaces for data types
+- Use ShadCN UI components for consistent design
+- Leverage Nivo's powerful charting capabilities
+- Implement proper error boundaries and loading states
+- Use Framer Motion for subtle, meaningful animations
+- Follow React best practices for component architecture

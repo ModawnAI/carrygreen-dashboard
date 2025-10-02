@@ -1,0 +1,109 @@
+{
+	"meta": {
+		"generatedAt": "2025-10-02T06:09:33.062Z",
+		"tasksAnalyzed": 12,
+		"totalTasks": 12,
+		"analysisCount": 12,
+		"thresholdScore": 5,
+		"projectName": "Taskmaster",
+		"usedResearch": false
+	},
+	"complexityAnalysis": [
+		{
+			"taskId": 1,
+			"taskTitle": "Project Setup and Core Dependencies",
+			"complexityScore": 4,
+			"recommendedSubtasks": 7,
+			"expansionPrompt": "Break down the project setup into initialization, dependency installation, configuration, and validation phases",
+			"reasoning": "Standard Next.js setup with well-documented dependencies, but requires careful configuration and validation steps"
+		},
+		{
+			"taskId": 2,
+			"taskTitle": "Data Types and CSV Parser Implementation",
+			"complexityScore": 7,
+			"recommendedSubtasks": 8,
+			"expansionPrompt": "Detail the data model structure and parsing logic with comprehensive error handling",
+			"reasoning": "Complex data validation, transformation logic, and type safety requirements need careful implementation"
+		},
+		{
+			"taskId": 3,
+			"taskTitle": "Responsive Layout Implementation",
+			"complexityScore": 6,
+			"recommendedSubtasks": 7,
+			"expansionPrompt": "Break down the layout implementation into component hierarchy and responsive breakpoints",
+			"reasoning": "Requires careful planning for component composition and responsive behavior across devices"
+		},
+		{
+			"taskId": 4,
+			"taskTitle": "Real-Time Data Simulation Service",
+			"complexityScore": 8,
+			"recommendedSubtasks": 9,
+			"expansionPrompt": "Detail the WebSocket service architecture and data flow management",
+			"reasoning": "Complex real-time data handling with connection management and error recovery"
+		},
+		{
+			"taskId": 5,
+			"taskTitle": "KPI Components Development",
+			"complexityScore": 6,
+			"recommendedSubtasks": 8,
+			"expansionPrompt": "Break down each KPI component into its core visualization and update logic",
+			"reasoning": "Multiple interactive components with real-time updates and animations"
+		},
+		{
+			"taskId": 6,
+			"taskTitle": "Battery Gauge Component",
+			"complexityScore": 7,
+			"recommendedSubtasks": 8,
+			"expansionPrompt": "Detail the SVG implementation and animation states for the battery gauge",
+			"reasoning": "Complex SVG manipulation with advanced animations and real-time updates"
+		},
+		{
+			"taskId": 7,
+			"taskTitle": "Time Series Chart Implementation",
+			"complexityScore": 8,
+			"recommendedSubtasks": 9,
+			"expansionPrompt": "Break down the chart implementation into data handling and interaction features",
+			"reasoning": "Complex data visualization with multiple interaction features and performance considerations"
+		},
+		{
+			"taskId": 8,
+			"taskTitle": "Energy Production Summary Charts",
+			"complexityScore": 7,
+			"recommendedSubtasks": 8,
+			"expansionPrompt": "Detail the chart components and data aggregation logic",
+			"reasoning": "Multiple chart types with complex data aggregation and comparison features"
+		},
+		{
+			"taskId": 9,
+			"taskTitle": "System Status Panel Development",
+			"complexityScore": 6,
+			"recommendedSubtasks": 7,
+			"expansionPrompt": "Break down the status panel into individual monitoring and alert components",
+			"reasoning": "Multiple status indicators with real-time updates and alert system"
+		},
+		{
+			"taskId": 10,
+			"taskTitle": "Data Management and Filtering",
+			"complexityScore": 7,
+			"recommendedSubtasks": 8,
+			"expansionPrompt": "Detail the filtering logic and data management features",
+			"reasoning": "Complex data manipulation with multiple filtering options and export capabilities"
+		},
+		{
+			"taskId": 11,
+			"taskTitle": "Performance Optimization",
+			"complexityScore": 9,
+			"recommendedSubtasks": 10,
+			"expansionPrompt": "Break down optimization strategies for code, assets, and runtime performance",
+			"reasoning": "Complex optimization requirements across multiple aspects of the application"
+		},
+		{
+			"taskId": 12,
+			"taskTitle": "Production Deployment Setup",
+			"complexityScore": 5,
+			"recommendedSubtasks": 6,
+			"expansionPrompt": "Detail the deployment process and monitoring setup",
+			"reasoning": "Standard deployment setup with monitoring and documentation requirements"
+		}
+	]
+}
